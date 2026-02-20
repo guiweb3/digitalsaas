@@ -1,116 +1,89 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Digital SaaS — Notícias de Tecnologia</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Digital SaaS — Notícias</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{overflow-x:hidden}
-img{max-width:100%;height:auto}
-:root{--accent:#7c3aed;--ink:#111;--paper:#fff;--muted:#666;--border:#e8e8e8;--bg2:#f8f7ff}
-body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink)}
-a{color:inherit;text-decoration:none}
-.header{max-width:900px;margin:0 auto;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink)}
-.logo{font-family:'DM Serif Display',serif;font-size:1.8rem}
-.logo span{color:var(--accent)}
-.header-right{display:flex;align-items:center;gap:1rem}
-.search-box input{border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:.8rem;font-family:inherit;outline:none;width:160px}
-.nav{max-width:900px;margin:0 auto;padding:.8rem 2rem;display:flex;gap:1.5rem;font-size:.8rem;font-weight:500;color:var(--muted);border-bottom:1px solid var(--border);overflow-x:auto}
-.nav a:hover{color:var(--accent)}
-.nav a.active{color:var(--accent);font-weight:700}
-.hero{max-width:900px;margin:2rem auto;padding:0 2rem}
-.hero-card{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.hero-card h1{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1.2;margin-bottom:.8rem}
-.hero-card p{color:var(--muted);line-height:1.7;margin-bottom:1rem}
-.hero-card .meta{font-size:.78rem;color:var(--muted)}
-.hero-card .tag{color:var(--accent);font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem;display:block}
-.hero-img{width:100%;height:300px;object-fit:cover;border-radius:8px}
-.section-title{max-width:900px;margin:2rem auto .5rem;padding:0 2rem;font-size:1.3rem;font-family:'DM Serif Display',serif}
-.news-list{max-width:900px;margin:0 auto;padding:0 2rem}
-.news-item{display:grid;grid-template-columns:1fr 160px;gap:1.5rem;align-items:center;padding:1.5rem 0;border-bottom:1px solid var(--border)}
-.news-item .tag{color:var(--accent);font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.3rem;display:block}
-.news-item h3{font-size:1.05rem;font-weight:600;line-height:1.35;margin-bottom:.4rem}
-.news-item p{font-size:.82rem;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.news-item .meta{font-size:.72rem;color:var(--muted);margin-top:.5rem}
-.news-item img{width:160px;height:110px;object-fit:cover;border-radius:6px}
-.load-more{max-width:900px;margin:2rem auto;padding:0 2rem;text-align:center}
-.load-more button{background:var(--accent);color:#fff;border:none;padding:10px 28px;border-radius:20px;font-size:.85rem;font-family:inherit;font-weight:600;cursor:pointer}
-.footer{max-width:900px;margin:3rem auto 0;padding:2rem;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;font-size:.78rem}
-.footer h4{font-weight:700;margin-bottom:.8rem;font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
-.footer a{display:block;color:var(--muted);margin-bottom:.4rem}
-.footer-bottom{max-width:900px;margin:0 auto;padding:1.5rem 2rem;font-size:.72rem;color:var(--muted);text-align:center}
-.article-view{max-width:680px;margin:2rem auto;padding:0 2rem;display:none}
-.article-view.active{display:block}
-.article-view .back{font-size:.85rem;color:var(--accent);cursor:pointer;margin-bottom:1.5rem;display:inline-block}
-.article-view h1{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1.2;margin-bottom:.5rem}
-.article-view .meta{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-.article-view .cover{width:100%;border-radius:8px;margin-bottom:1.5rem}
-.article-view .body{font-size:1rem;line-height:1.85;color:#333}
-.article-view .body p{margin-bottom:1.2rem}
-.article-view .tags{margin-top:2rem;display:flex;gap:6px;flex-wrap:wrap}
-.article-view .tags span{font-size:.7rem;background:var(--bg2);padding:4px 10px;border-radius:12px;color:var(--accent);font-weight:500}
-.home-view{}
-.home-view.hidden{display:none}
+*{margin:0;padding:0;box-sizing:border-box}html,body{overflow-x:hidden}img{max-width:100%;height:auto}
+:root{--a:#0369a1;--ink:#e0e0e0;--p:#0a0a10;--m:#777;--b:#1a1a28;--c:#111119;--c2:#16161f}
+body{font-family:'Inter',sans-serif;background:var(--p);color:var(--ink)}a{color:inherit;text-decoration:none}
+.header{background:var(--c);border-bottom:1px solid var(--b)}
+.hi{max-width:1200px;margin:0 auto;padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.5rem;font-weight:800}.logo span{color:var(--a)}
+.tnav{background:var(--c2);border-bottom:1px solid var(--b)}
+.tnav-i{max-width:1200px;margin:0 auto;padding:.5rem 2rem;display:flex;gap:1.5rem;font-size:.75rem;color:var(--m);overflow-x:auto}
+.tnav-i a:hover{color:var(--a)}
+.si input{background:var(--c2);border:1px solid var(--b);color:var(--ink);border-radius:4px;padding:6px 12px;font-size:.78rem;font-family:inherit;outline:none;width:150px}
+.top-grid{max-width:1200px;margin:1.5rem auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:1.5rem}
+.col-list a{display:block;padding:.6rem 0;border-bottom:1px solid var(--b);font-size:.82rem;font-weight:500;line-height:1.35}
+.col-list a .tg{font-size:.6rem;color:var(--a);font-weight:700}
+.col-list h3{font-size:.85rem;font-weight:700;margin-bottom:.8rem;color:var(--a);text-transform:lowercase}
+.col-feat{position:relative;border-radius:10px;overflow:hidden;min-height:350px}
+.col-feat img{width:100%;height:100%;object-fit:cover;position:absolute}
+.col-feat .ov{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+.col-feat .ov h2{font-size:1.5rem;font-weight:800;line-height:1.2}
+.col-feat .ov p{font-size:.78rem;opacity:.8;margin-top:.4rem}
+.st{max-width:1200px;margin:2.5rem auto 1rem;padding:0 2rem;font-size:.82rem;font-weight:700;text-transform:lowercase;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:.5rem}
+.grid4{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gc{background:var(--c);border-radius:8px;overflow:hidden;transition:.2s}.gc:hover{transform:translateY(-2px)}
+.gc img{width:100%;height:140px;object-fit:cover}
+.gc .cb{padding:.8rem}.gc .cb h3{font-size:.82rem;font-weight:600;line-height:1.3}
+.gc .cb .mt{font-size:.65rem;color:var(--m);margin-top:.4rem}
+.grid5{max-width:1200px;margin:1rem auto;padding:0 2rem;display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
+.g5c img{width:100%;height:100px;object-fit:cover;border-radius:6px;margin-bottom:.4rem}
+.g5c h4{font-size:.72rem;font-weight:600;line-height:1.3}
+.footer{border-top:1px solid var(--b);padding:2rem;margin-top:3rem;text-align:center;font-size:.7rem;color:var(--m)}
+.av{max-width:700px;margin:2rem auto;padding:0 2rem;display:none}.av.active{display:block}
+.av .back{display:inline-block;font-size:.85rem;color:var(--a);cursor:pointer;margin-bottom:1.5rem;font-weight:600}
+.av h1{font-size:2rem;font-weight:800;line-height:1.2;margin-bottom:.5rem}
+.av .meta{font-size:.82rem;color:var(--m);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--b)}
+.av .cover{width:100%;border-radius:8px;margin-bottom:1.5rem}
+.av .body{font-size:1rem;line-height:1.85;color:#ccc}.av .body p{margin-bottom:1rem}
+.av .tags{margin-top:2rem;display:flex;gap:6px;flex-wrap:wrap}.av .tags span{font-size:.7rem;background:var(--c);padding:4px 10px;border-radius:4px}
+.hv{}.hv.hidden{display:none}
 @media(max-width:768px){
-.header{padding:1rem;flex-wrap:wrap;gap:.5rem}
-.logo{font-size:1.4rem}
-.search-box input{width:100%}
-.nav{padding:.6rem 1rem;gap:1rem;font-size:.75rem}
-.hero{padding:0 1rem}
-.hero-card{grid-template-columns:1fr}
-.hero-card h1{font-size:1.5rem}
-.hero-img{height:200px}
-.news-list{padding:0 1rem}
-.news-item{grid-template-columns:1fr 100px;gap:1rem}
-.news-item img{width:100px;height:75px}
-.news-item h3{font-size:.9rem}
-.footer{grid-template-columns:1fr 1fr;padding:2rem 1rem}
-.article-view{padding:0 1rem}
-.article-view h1{font-size:1.5rem}
+.hi{padding:.6rem 1rem;flex-wrap:wrap;gap:.5rem}.logo{font-size:1.2rem}.tnav-i{padding:.5rem 1rem}
+.si input{width:100%}.top-grid{grid-template-columns:1fr;padding:0 1rem}.col-list{display:none}
+.col-feat{min-height:250px}.col-feat .ov h2{font-size:1.2rem}
+.grid4{grid-template-columns:1fr 1fr;padding:0 1rem}.grid5{grid-template-columns:1fr 1fr;padding:0 1rem}
+.av{padding:0 1rem}.av h1{font-size:1.4rem}.st{padding:0 1rem;padding-bottom:.5rem}
 }
-</style>
-</head>
-<body>
-<div class="home-view" id="homeView">
-<div class="header">
-<div class="logo">Digital<span>SaaS</span></div>
-<div class="header-right">
-<div class="search-box"><input type="text" placeholder="Buscar notícias..." id="searchInput" oninput="handleSearch()"></div>
+</style></head><body>
+<div class="hv" id="hv">
+<div class="header"><div class="hi"><div class="logo">Digital<span>SaaS</span></div><div class="si"><input type="text" placeholder="Buscar..." id="si" oninput="hS()"></div></div></div>
+<div class="tnav"><div class="tnav-i" id="nf"></div></div>
+<div class="top-grid"><div class="col-list"><h3>mais recente</h3><div id="lr"></div></div><div id="mf"></div><div class="col-list"><h3>análises</h3><div id="an"></div></div></div>
+<div class="st">notícias sobre criptomoedas</div>
+<div class="grid4" id="g4"></div>
+<div class="st">siga-nos nas redes sociais</div>
+<div class="grid5" id="g5"></div>
+<div class="st">perspectivas de mercado</div>
+<div class="grid4" id="g4b"></div>
+<div class="footer">© 2026 Digital SaaS. Todos os direitos reservados.</div>
 </div>
-</div>
-<div class="nav" id="navFilters"></div>
-<div class="hero" id="heroSection"></div>
-<div class="section-title">Últimas Notícias</div>
-<div class="news-list" id="newsList"></div>
-<div class="footer">
-<div><h4>Seções</h4><a href="#">Bitcoin</a><a href="#">Ethereum</a><a href="#">DeFi</a><a href="#">NFT</a></div>
-<div><h4>Mercado</h4><a href="#">Análises</a><a href="#">Previsões</a><a href="#">Regulação</a></div>
-<div><h4>Tech</h4><a href="#">Blockchain</a><a href="#">IA</a><a href="#">Web3</a></div>
-<div><h4>Digital SaaS</h4><a href="#">Sobre</a><a href="#">Contato</a><a href="#">Termos</a></div>
-</div>
-<div class="footer-bottom">© 2026 Digital SaaS. Todos os direitos reservados.</div>
-</div>
-<div class="article-view" id="articleView"><span class="back" onclick="goHome()">← Voltar</span><div id="articleContent"></div></div>
-<script>
-const SUPA="https://vpvsrjkotstvjywhuacr.supabase.co",KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZwdnNyamtvdHN0dmp5d2h1YWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzE2MzQsImV4cCI6MjA2MjgwNzYzNH0.BDh59N4okIoJB0aOheqp07lYLgd0A4y3Ho1H26xl2jw";
-let allNews=[],searchQuery='',currentFilter='';
-function parseTags(h){if(!h)return[];if(Array.isArray(h))return h;if(typeof h==='string')return h.split('#').filter(Boolean).map(t=>t.trim());return[]}
-async function init(){const r=await fetch(SUPA+'/rest/v1/noticiasgeral?status=eq.publicado&order=created_at.desc&limit=30',{headers:{'apikey':KEY,'Authorization':'Bearer '+KEY}});allNews=await r.json();renderHome();handleHash()}
-function renderHome(){let news=getFiltered();
-if(news.length>0){const n=news[0];const tags=parseTags(n.hashtags);
-document.getElementById('heroSection').innerHTML=`<div class="hero-card"><div><span class="tag">${tags[0]||'Tecnologia'}</span><h1>${n.titulo_noticia||''}</h1><p>${(n.resumo_noticia||'').slice(0,200)}...</p><div class="meta">${n.autor||'Redação'} · ${n.created_at?new Date(n.created_at).toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'}):''}</div></div><a href="#/article/${n.slug}"><img class="hero-img" src="${n.capa_noticia||''}" onerror="this.style.background='#f0f0f0'" alt=""></a></div>`}
-document.getElementById('newsList').innerHTML=news.slice(1).map(n=>{const tags=parseTags(n.hashtags);return`
-<a href="#/article/${n.slug}" class="news-item"><div><span class="tag">${tags[0]||'Tech'}</span><h3>${n.titulo_noticia||''}</h3><p>${(n.resumo_noticia||'').slice(0,120)}</p><div class="meta">${n.autor||'Redação'} · ${n.created_at?new Date(n.created_at).toLocaleDateString('pt-BR',{day:'numeric',month:'short'}):''}  · ${Math.ceil((n.resumo_noticia||'').length/800)} min de leitura</div></div><img src="${n.capa_noticia||''}" onerror="this.style.background='#f0f0f0'" alt=""></a>`}).join('');
-const cats=[...new Set(allNews.flatMap(n=>parseTags(n.hashtags).slice(0,2)))].filter(c=>c.length<15).slice(0,6);
-document.getElementById('navFilters').innerHTML=cats.map(c=>`<a href="#" onclick="event.preventDefault();setFilter('${c}')" class="${currentFilter===c?'active':''}">${c}</a>`).join('')}
-function setFilter(f){currentFilter=currentFilter===f?'':f;renderHome()}
-function handleSearch(){searchQuery=document.getElementById('searchInput').value.toLowerCase();renderHome()}
-function getFiltered(){let f=allNews;if(currentFilter)f=f.filter(n=>parseTags(n.hashtags).includes(currentFilter));if(searchQuery)f=f.filter(n=>(n.titulo_noticia||'').toLowerCase().includes(searchQuery)||(n.resumo_noticia||'').toLowerCase().includes(searchQuery));return f}
-function showArticle(slug){const n=allNews.find(a=>a.slug===slug);if(!n)return;const tags=parseTags(n.hashtags);document.getElementById('articleContent').innerHTML=`<h1>${n.titulo_noticia||''}</h1><div class="meta">${n.autor||'Redação'} · ${n.created_at?new Date(n.created_at).toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'}):''}</div>${n.capa_noticia?`<img class="cover" src="${n.capa_noticia}" alt="">`:''}<div class="body">${(n.resumo_noticia||'').split('\n').map(p=>'<p>'+p+'</p>').join('')}</div><div class="tags">${tags.map(t=>'<span>#'+t+'</span>').join('')}</div>`;
-document.getElementById('homeView').classList.add('hidden');document.getElementById('articleView').classList.add('active');window.scrollTo(0,0)}
-function goHome(){document.getElementById('homeView').classList.remove('hidden');document.getElementById('articleView').classList.remove('active')}
-function handleHash(){const h=location.hash;if(h.startsWith('#/article/'))showArticle(h.replace('#/article/',''));else goHome()}
-window.addEventListener('hashchange',handleHash);init();
+<div class="av" id="av"><span class="back" onclick="gH()">← Voltar</span><div id="ac"></div></div>
+<script>const SUPA="https://vpvsrjkotstvjywhuacr.supabase.co",KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZwdnNyamtvdHN0dmp5d2h1YWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzE2MzQsImV4cCI6MjA2MjgwNzYzNH0.BDh59N4okIoJB0aOheqp07lYLgd0A4y3Ho1H26xl2jw";
+let allNews=[],sq='',cf='';
+function pT(h){if(!h)return[];if(Array.isArray(h))return h;if(typeof h==='string')return h.split('#').filter(Boolean).map(t=>t.trim());return[]}
+function fmtD(d){return d?new Date(d).toLocaleDateString('pt-BR',{day:'numeric',month:'short',year:'numeric'}):'';}
+function fmtDL(d){return d?new Date(d).toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'}):'';}
+async function init(){const r=await fetch(SUPA+'/rest/v1/noticiasgeral?status=eq.publicado&order=created_at.desc&limit=40',{headers:{'apikey':KEY,'Authorization':'Bearer '+KEY}});allNews=await r.json();render();hH()}
+function gF(){let f=allNews;if(cf)f=f.filter(n=>pT(n.hashtags).includes(cf));if(sq)f=f.filter(n=>(n.titulo_noticia||'').toLowerCase().includes(sq)||(n.resumo_noticia||'').toLowerCase().includes(sq));return f}
+function sF(f){cf=cf===f?'':f;render()}
+function hS(){sq=document.getElementById('si').value.toLowerCase();render()}
+function sA(slug){const n=allNews.find(a=>a.slug===slug);if(!n)return;const tags=pT(n.hashtags);
+document.getElementById('ac').innerHTML=`<h1>${n.titulo_noticia||''}</h1><div class="meta">${n.autor||'Redação'} · ${fmtDL(n.created_at)}</div>${n.capa_noticia?`<img class="cover" src="${n.capa_noticia}" alt="">`:''}
+<div class="body">${(n.resumo_noticia||'').split('\n').map(p=>'<p>'+p+'</p>').join('')}</div><div class="tags">${tags.map(t=>'<span>#'+t+'</span>').join('')}</div>`;
+document.getElementById('hv').classList.add('hidden');document.getElementById('av').classList.add('active');window.scrollTo(0,0)}
+function gH(){document.getElementById('hv').classList.remove('hidden');document.getElementById('av').classList.remove('active')}
+function hH(){const h=location.hash;if(h.startsWith('#/article/'))sA(h.replace('#/article/',''));else gH()}
+window.addEventListener('hashchange',hH);init();
+function render(){let n=gF();
+if(n.length>0){const h=n[0];
+document.getElementById('mf').innerHTML=`<a href="#/article/${h.slug}" class="col-feat"><img src="${h.capa_noticia||''}" onerror="this.style.background='#1a1a2e'" alt=""><div class="ov"><h2>${h.titulo_noticia||''}</h2><p>${(h.resumo_noticia||'').slice(0,120)}...</p></div></a>`;}
+document.getElementById('lr').innerHTML=n.slice(1,6).map(x=>`<a href="#/article/${x.slug}"><div class="tg">${pT(x.hashtags)[0]||'Tech'}</div>${x.titulo_noticia||''}</a>`).join('');
+document.getElementById('an').innerHTML=n.slice(6,11).map(x=>`<a href="#/article/${x.slug}">${x.titulo_noticia||''}</a>`).join('');
+document.getElementById('g4').innerHTML=n.slice(1,9).map(x=>`<a href="#/article/${x.slug}" class="gc"><img src="${x.capa_noticia||''}" onerror="this.style.background='#1a1a2e'" alt=""><div class="cb"><h3>${x.titulo_noticia||''}</h3><div class="mt">${fmtD(x.created_at)}</div></div></a>`).join('');
+document.getElementById('g5').innerHTML=n.slice(9,19).map(x=>`<a href="#/article/${x.slug}" class="g5c"><img src="${x.capa_noticia||''}" onerror="this.style.background='#1a1a2e'" alt=""><h4>${x.titulo_noticia||''}</h4></a>`).join('');
+document.getElementById('g4b').innerHTML=n.slice(19,27).map(x=>`<a href="#/article/${x.slug}" class="gc"><img src="${x.capa_noticia||''}" onerror="this.style.background='#1a1a2e'" alt=""><div class="cb"><h3>${x.titulo_noticia||''}</h3><div class="mt">${fmtD(x.created_at)}</div></div></a>`).join('');
+const cats=[...new Set(n.flatMap(x=>pT(x.hashtags).slice(0,2)))].filter(c=>c.length<15).slice(0,7);
+document.getElementById('nf').innerHTML=cats.map(c=>`<a href="#" onclick="event.preventDefault();sF('${c}')">${c}</a>`).join('')}
 </script></body></html>
